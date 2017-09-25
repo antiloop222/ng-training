@@ -2,6 +2,7 @@
     background-color: #CCCCCC;
     color: black;
     text-align: left;
+    justify-content: center;
     width: 250px;
     border: 2px solid #DADADA
 }

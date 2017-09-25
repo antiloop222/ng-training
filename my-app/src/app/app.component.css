@@ -1,14 +1,11 @@
 .title-back {
     background-color: #333333;
     display: flex;
-    align-items: center;
     height: 50px;
 }
 
 .title-text {
-    background-color: #333333;
     color: white;
-    text-align: center;
     font-size: larger;
     margin: auto;
 }
