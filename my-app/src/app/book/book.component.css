@@ -1,0 +1,14 @@
+.book-entry {
+    background-color: #CCCCCC;
+    color: black;
+    text-align: left;
+}
+
+.book-cover {
+    width: 150px;
+    height: auto;
+}
+
+strong {
+    font-weight: bold;
+}
