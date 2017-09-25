@@ -1,14 +1,19 @@
-.app-title-back {
+.title-back {
     background-color: #333333;
     display: flex;
     align-items: center;
     height: 50px;
 }
 
-.app-title-text {
+.title-text {
     background-color: #333333;
     color: white;
     text-align: center;
     font-size: larger;
     margin: auto;
+}
+
+.book-catalog {
+    display: flex;
+    flex-direction: row;    
 }

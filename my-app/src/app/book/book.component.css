@@ -1,12 +1,21 @@
-.book-entry {
+.book {
     background-color: #CCCCCC;
     color: black;
     text-align: left;
+    width: 250px;
+    border: 2px solid #DADADA
 }
 
 .book-cover {
     width: 150px;
     height: auto;
+}
+
+.book-title {
+    font-size: 1.5em;
+    background-color: #666666;
+    color: #FAFAFA;
+    padding: 5px;
 }
 
 strong {

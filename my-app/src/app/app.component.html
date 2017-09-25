@@ -1,6 +1,7 @@
-<div class="app-title-back">
-  <div class="app-title-text">{{title}}</div>
+<div class="title-back">
+  <div class="title-text">{{title}}</div>
 </div>
+<div class="book-catalog">
 <!--
 <app-book [title]="'Harry Potter'"
           [author]="'J.K. Rowling'"
@@ -9,3 +10,4 @@
           [htPrice]="19.90"></app-book>
 -->
 <app-book *ngFor="let book of books" [data]="book"></app-book>
+</div>

@@ -1,6 +1,7 @@
-<div class="book-entry">
-  <strong>{{data.title}} from {{data.author}}</strong><br/>
-  <img class="book-cover" src="./assets/img/{{data.img}}"/><br/>
-  Price: {{data.htPrice}} € HT<br/>
-  ISBN: {{data.isbn}}<br/>
+<div class="book" *ngIf="data !== null">
+  <h1 class="book-title">{{data.title}}</h1>
+  <img class="book-cover" src="./assets/img/{{data.img}}"/>
+  <p>Author: {{data.author}}</p>
+  <p>Price: {{data.htPrice}} € HT</p>
+  <p>ISBN: {{data.isbn}}</p>
 </div>
