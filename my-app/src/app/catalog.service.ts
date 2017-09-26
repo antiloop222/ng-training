@@ -12,29 +12,31 @@ export class CatalogService {
         author: "J.K. Rowling",
         isbn: "0172-4976",
         img: "harry_ecole.jpg",
-        htPrice: 14.90
+        htPrice: 14.90,
+        description: "description"
     },
     {
         title: "Harry Potter Tome II",
         author: "J.K. Rowling",
         isbn: "8340-6122",
         img: "harry_prisonnier.jpg",
-        htPrice: 19.90
-    },
+        htPrice: 19.90,
+        description: "description"
+      },
     {
         title: "Dune Tome I",
         author: "Frank Herbert",
         isbn: "1916-2765",
         img: "dune.jpg",
-        htPrice: 9.90
-    }
+        htPrice: 9.90,
+        description: "description"
+      }
 ];
 
-  public getBookByISBN(isbn:string):Book {
-    return this.CATALOG[0];
-  }
-
-  public getCatalog():Book[] {
-    return this.CATALOG;
+public getCatalog():Book[] {
+  return this.CATALOG;
+}
+public getBookByISBN(isbn:string):Book {
+    return this.getCatalog().find((book) => (book.isbn == isbn));
   }
 }
