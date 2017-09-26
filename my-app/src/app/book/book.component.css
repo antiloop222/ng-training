@@ -9,7 +9,8 @@
 
 .book-cover {
     width: 150px;
-    height: auto;
+    display: flex;
+    margin: auto;
 }
 
 .book-title {

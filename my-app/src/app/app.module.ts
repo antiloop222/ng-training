@@ -11,6 +11,8 @@ import { HomeComponent } from './home/home.component';
 import { RangePipe } from './range.pipe';
 import { CartComponent } from './cart/cart.component';
 import { AuthorPipe } from './author.pipe';
+import { CatalogService } from './catalog.service';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +30,7 @@ import { AuthorPipe } from './author.pipe';
     BrowserModule,
     RouterModule.forRoot([{path:"home", component: HomeComponent},{path:"catalog", component: CatalogComponent},{path:"contact", component: ContactComponent},{path:"cart", component: CartComponent}])
   ],
-  providers: [],
+  providers: [CatalogService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
