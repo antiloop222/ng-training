@@ -11,6 +11,12 @@ export class CatalogComponent implements OnInit {
   @Input()
   public catalogVO:Catalog = null;
 
+  public min:number = 0;
+  public max:number = 1000;
+
+  public firstLetter:string = "A";
+  public secondLetter:string = "Z";
+
   constructor() {
     this.catalogVO = new Catalog(128);
     this.catalogVO.addBook(CATALOG[0]);

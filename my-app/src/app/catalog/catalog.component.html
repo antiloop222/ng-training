@@ -1,4 +1,10 @@
-<div class="catalog">
+<div class="catalog-filters">
+    <label>Prix min: </label><input [(ngModel)]="min"/><br/>
+    <label>Prix max: </label><input [(ngModel)]="max"/><br/>
+    <label>Author name between </label><input [(ngModel)]="firstLetter"/><label> and </label><input [(ngModel)]="secondLetter"/><br/>
+</div>
+<br/>
+<div class="catalog-content">
   <!--
   <app-book [title]="'Harry Potter'"
             [author]="'J.K. Rowling'"
@@ -6,7 +12,7 @@
             [isbn]="'1234'"
             [htPrice]="19.90"></app-book>
   -->
-  <app-book *ngFor="let book of catalogVO.books | range:0:15"
+  <app-book *ngFor="let book of catalogVO.books | range:min:max | author:firstLetter:secondLetter"
             [bookVO]="book"
             (onCart)="cartHandler($event)"></app-book>
 </div>

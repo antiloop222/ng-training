@@ -12,7 +12,7 @@ export class BookComponent implements OnInit {
   public bookVO:Book = null;
 
   @Output()
-  public onCart:EventEmitter<any> = null;
+  public onCart:EventEmitter<Book> = null;
 
   constructor() {
 // default values overriden by app-book elements

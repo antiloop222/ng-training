@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Catalog } from '../catalog';
 
 @Component({
   selector: 'app-contact',
@@ -7,7 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
+  @Input()
+  public catalogVO:Catalog = null;
+
+  @Output()
+  public onCart:EventEmitter<Catalog> = null;
+
   constructor() { }
+
+  public clickHandler(p_obj:any):void {
+    // traitement avant ajout au panier
+    // alert("Add to cart");
+    this.onCart.emit(this.catalogVO);
+  }
 
   ngOnInit() {
   }
