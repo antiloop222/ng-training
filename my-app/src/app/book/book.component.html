@@ -4,6 +4,6 @@
   <p>Author: {{bookVO.author}}</p>
   <p>Price: {{bookVO.htPrice}} € HT</p>
   <p>ISBN: {{bookVO.isbn}}</p>
-  <a routerLink="/details">Details</a><br/>
+  <a routerLink="/details/{{bookVO.isbn}}">Details</a><br/>
   <button (click)="clickHandler($event)">Add to cart</button>
 </div>

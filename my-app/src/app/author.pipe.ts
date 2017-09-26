@@ -7,6 +7,9 @@ import { Book } from './book';
 export class AuthorPipe implements PipeTransform {
 
   transform(p_books:Book[], p_firstLetter:string, p_secondLetter:string): Book[] {
+    if(p_books == null) {
+      return null;
+    }
     return p_books.filter((book) => (
       book.author.toUpperCase().charCodeAt(0) >= p_firstLetter.toUpperCase().charCodeAt(0) && 
       book.author.toUpperCase().charCodeAt(0) <= p_secondLetter.toUpperCase().charCodeAt(0)

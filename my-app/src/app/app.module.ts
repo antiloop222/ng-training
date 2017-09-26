@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { BookComponent } from './book/book.component';
@@ -30,12 +31,13 @@ import { BookDetailsComponent } from './book-details/book-details.component';
   imports: [
     FormsModule,
     BrowserModule,
+    HttpModule,
     RouterModule.forRoot([
       {path:"home", component: HomeComponent},
       {path:"catalog", component: CatalogComponent},
       {path:"contact", component: ContactComponent},
       {path:"cart", component: CartComponent},
-      {path:"details", component: BookDetailsComponent}
+      {path:"details/:isbn", component: BookDetailsComponent}
     ])
   ],
   providers: [CatalogService],

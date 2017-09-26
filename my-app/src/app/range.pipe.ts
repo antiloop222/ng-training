@@ -7,6 +7,9 @@ import { Book } from './book';
 export class RangePipe implements PipeTransform {
 
   transform(p_books:Book[], p_min:number, p_max:number): Book[] {
+    if(p_books == null) {
+      return null;
+    }
     let result:Book[] = new Array<Book>();
     let i:number = 0;
     for(i = 0; i < p_books.length; i++) {
@@ -16,5 +19,4 @@ export class RangePipe implements PipeTransform {
     }
     return result;
   }
-
 }

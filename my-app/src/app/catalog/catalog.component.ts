@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Catalog } from '../catalog';
 import { CatalogService } from '../catalog.service';
+import { Book } from '../book';
 
 @Component({
   selector: 'app-catalog',
@@ -11,6 +12,8 @@ export class CatalogComponent implements OnInit {
 
   @Input()
   public catalogVO:Catalog = new Catalog();
+
+  private booksVO:Book[];
 
   private service:CatalogService;
 
@@ -26,7 +29,10 @@ export class CatalogComponent implements OnInit {
 
   ngOnInit() {
     // data provided by services should be used only here and not in constructor
-    this.catalogVO.setBooks(this.service.getCatalog());
+    let _books:Book[];
+    this.service.getCatalog().then(
+      (books:Book[]) => { this.booksVO = books; }
+    );
+    this.catalogVO.setBooks(this.booksVO);
   }
-
 }

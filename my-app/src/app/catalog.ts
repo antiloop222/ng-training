@@ -15,6 +15,8 @@ export class Catalog {
 
     public setBooks(p_books:Book[]):void {
         this.books = p_books;
-        this.nBooks = p_books.length;
+        if(p_books != null) {
+            this.nBooks = p_books.length;
+        }
     }
 }
