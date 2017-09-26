@@ -1,0 +1,25 @@
+.book {
+    background-color: #CCCCCC;
+    color: black;
+    text-align: left;
+    justify-content: center;
+    width: 250px;
+    border: 2px solid #888888;
+}
+
+.book-cover {
+    width: 150px;
+    display: flex;
+    margin: auto;
+}
+
+.book-title {
+    font-size: 1.5em;
+    background-color: #666666;
+    color: #FAFAFA;
+    padding: 5px;
+}
+
+strong {
+    font-weight: bold;
+}
