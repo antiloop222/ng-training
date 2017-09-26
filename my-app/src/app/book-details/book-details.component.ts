@@ -17,7 +17,7 @@ export class BookDetailsComponent implements OnInit {
   private service:CatalogService;
 
   @Input()
-  public bookVO:Book;
+  public book:Book;
   
   constructor(p_service:CatalogService, p_route:ActivatedRoute) {
     this.service = p_service;
@@ -26,9 +26,9 @@ export class BookDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(
-      (params:any) => {
-        this.service.getBookByISBN(params.isbn).then(
-          (book:Book) => ( this.bookVO = book )
+      (_params:any) => {
+        this.service.getBookByISBN(_params.isbn).then(
+          (_book:Book) => ( this.book = _book )
         )
       }
     );

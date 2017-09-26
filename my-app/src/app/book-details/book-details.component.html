@@ -1,8 +1,8 @@
-<div class="book" *ngIf="bookVO !== null">
-  <h1 class="book-title">{{bookVO.title}}</h1>
-  <img class="book-cover" src="./assets/img/{{bookVO.img}}"/>
-  <p>Author: {{bookVO.author}}</p>
-  <p>Price: {{bookVO.htPrice}} € HT</p>
-  <p>ISBN: {{bookVO.isbn}}</p>
-  <p>Description: {{bookVO.description}}</p>
+<div class="book" *ngIf="book !== null">
+  <h1 class="book-title">{{book.title}}</h1>
+  <img class="book-cover" src="./assets/img/{{book.img}}"/>
+  <p>Author: {{book.author}}</p>
+  <p>Price: {{book.htPrice}} € HT</p>
+  <p>ISBN: {{book.isbn}}</p>
+  <p>Description: {{book.description}}</p>
 </div>

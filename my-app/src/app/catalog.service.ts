@@ -6,10 +6,10 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class CatalogService {
 
-  private service:Http;
+  private httpService:Http;
 
   constructor(p_service:Http) {
-    this.service = p_service;
+    this.httpService = p_service;
   }
 
   private CATALOG:Book[] = [
@@ -50,20 +50,28 @@ export class CatalogService {
   public getCatalog():Promise<Book[]> {
     //  return this.CATALOG;
     let url:string = "/assets/data/catalog.json";
-    let promiseA:Promise<any> = this.service.get(url).toPromise();
-    let promiseB:Promise<Book[]> = promiseA.then(
-      (response) => { return response.json().catalog as Book[]; }
+    let promise:Promise<Book[]> = this.httpService.get(url).toPromise().then(
+      (_response) => {
+        return _response.json().catalog as Book[];
+      }
     );
-    return promiseB.catch(this.errorHandler);
+    return promise.catch(this.errorHandler);
   }
 
   public getBookByISBN(isbn:string):Promise<Book> {
     return this.getCatalog().then(
-      (books:Book[]) => (books.find((book) => (book.isbn == isbn)))
+      (_books:Book[]) => {
+        return _books.find(
+          (_book:Book) => {
+            return (_book.isbn === isbn);
+          }
+        )
+      }
     );
   }
 
   private errorHandler(error:any) {
+    console.log(error);
     return Promise.reject(error);
   }
 }

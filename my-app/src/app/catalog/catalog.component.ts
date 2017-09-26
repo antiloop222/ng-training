@@ -11,28 +11,30 @@ import { Book } from '../book';
 export class CatalogComponent implements OnInit {
 
   @Input()
-  public catalogVO:Catalog = new Catalog();
+  public catalog:Catalog = new Catalog();
 
-  private booksVO:Book[];
-
-  private service:CatalogService;
+  private catalogService:CatalogService;
 
   public min:number = 0;
   public max:number = 1000;
-
   public firstLetter:string = "A";
   public secondLetter:string = "Z";
 
   constructor(p_service:CatalogService) {
-    this.service = p_service;
+    this.catalogService = p_service;
+  }
+
+  public cartHandler(p_book:Book):void {
+    console.log(p_book);
   }
 
   ngOnInit() {
     // data provided by services should be used only here and not in constructor
     let _books:Book[];
-    this.service.getCatalog().then(
-      (books:Book[]) => { this.booksVO = books; }
+    this.catalogService.getCatalog().then(
+      (_books:Book[]) => {
+        this.catalog.setBooks(_books);
+      }
     );
-    this.catalogVO.setBooks(this.booksVO);
   }
 }

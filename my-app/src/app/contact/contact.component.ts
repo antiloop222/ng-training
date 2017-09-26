@@ -9,7 +9,7 @@ import { Catalog } from '../catalog';
 export class ContactComponent implements OnInit {
 
   @Input()
-  public catalogVO:Catalog = null;
+  public catalog:Catalog = null;
 
   @Output()
   public onCart:EventEmitter<Catalog> = null;
@@ -19,7 +19,7 @@ export class ContactComponent implements OnInit {
   public clickHandler(p_obj:any):void {
     // traitement avant ajout au panier
     // alert("Add to cart");
-    this.onCart.emit(this.catalogVO);
+    this.onCart.emit(this.catalog);
   }
 
   ngOnInit() {

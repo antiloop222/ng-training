@@ -10,9 +10,9 @@ export class AuthorPipe implements PipeTransform {
     if(p_books == null) {
       return null;
     }
-    return p_books.filter((book) => (
-      book.author.toUpperCase().charCodeAt(0) >= p_firstLetter.toUpperCase().charCodeAt(0) && 
-      book.author.toUpperCase().charCodeAt(0) <= p_secondLetter.toUpperCase().charCodeAt(0)
+    return p_books.filter((_book:Book) => (
+      _book.author.toUpperCase().charCodeAt(0) >= p_firstLetter.toUpperCase().charCodeAt(0) && 
+      _book.author.toUpperCase().charCodeAt(0) <= p_secondLetter.toUpperCase().charCodeAt(0)
     ));
   }
 }

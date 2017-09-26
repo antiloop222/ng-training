@@ -12,8 +12,4 @@ export class AppComponent {
 
   constructor() {
   }
-
-  public cartHandler(p_book:Book):void {
-    console.log(p_book);
-  }
 }
