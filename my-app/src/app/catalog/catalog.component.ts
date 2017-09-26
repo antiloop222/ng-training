@@ -21,6 +21,7 @@ export class CatalogComponent implements OnInit {
     this.catalogVO = new Catalog(128);
     this.catalogVO.addBook(CATALOG[0]);
     this.catalogVO.addBook(CATALOG[1]);
+    this.catalogVO.addBook(CATALOG[2]);
   }
 
   ngOnInit() {
