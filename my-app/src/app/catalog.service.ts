@@ -30,6 +30,10 @@ export class CatalogService {
     }
 ];
 
+  public getBookByISBN(isbn:string):Book {
+    return this.CATALOG[0];
+  }
+
   public getCatalog():Book[] {
     return this.CATALOG;
   }

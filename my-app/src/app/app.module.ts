@@ -12,6 +12,7 @@ import { RangePipe } from './range.pipe';
 import { CartComponent } from './cart/cart.component';
 import { AuthorPipe } from './author.pipe';
 import { CatalogService } from './catalog.service';
+import { BookDetailsComponent } from './book-details/book-details.component';
 
 
 @NgModule({
@@ -23,12 +24,19 @@ import { CatalogService } from './catalog.service';
     HomeComponent,
     RangePipe,
     CartComponent,
-    AuthorPipe
+    AuthorPipe,
+    BookDetailsComponent
   ],
   imports: [
     FormsModule,
     BrowserModule,
-    RouterModule.forRoot([{path:"home", component: HomeComponent},{path:"catalog", component: CatalogComponent},{path:"contact", component: ContactComponent},{path:"cart", component: CartComponent}])
+    RouterModule.forRoot([
+      {path:"home", component: HomeComponent},
+      {path:"catalog", component: CatalogComponent},
+      {path:"contact", component: ContactComponent},
+      {path:"cart", component: CartComponent},
+      {path:"details", component: BookDetailsComponent}
+    ])
   ],
   providers: [CatalogService],
   bootstrap: [AppComponent]

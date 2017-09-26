@@ -3,10 +3,8 @@ import { Book } from "./book";
 export class Catalog {
     public books:Book[] = null;
     public nBooks:number = 0;
-    public maxBooks:number = 0;
 
-    constructor(p_maxbooks:number) {
-        this.maxBooks = p_maxbooks;
+    constructor() {
         this.books = new Array();
     }
 

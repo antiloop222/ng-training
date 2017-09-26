@@ -10,7 +10,7 @@ import { CatalogService } from '../catalog.service';
 export class CatalogComponent implements OnInit {
 
   @Input()
-  public catalogVO:Catalog = null;
+  public catalogVO:Catalog = new Catalog();
 
   private service:CatalogService;
 

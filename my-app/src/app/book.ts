@@ -4,5 +4,5 @@ export class Book {
     public isbn:string;
     public img:string;   
     public htPrice:number;
+    public description:string;
 }
-
