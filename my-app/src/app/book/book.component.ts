@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import {Book} from '../book';
 
 @Component({
@@ -9,7 +9,10 @@ import {Book} from '../book';
 export class BookComponent implements OnInit {
 
   @Input()
-  public data:Book = null;
+  public bookVO:Book = null;
+
+  @Output()
+  public onCart:EventEmitter<any> = null;
 
   constructor() {
 // default values overriden by app-book elements
@@ -18,9 +21,15 @@ export class BookComponent implements OnInit {
 //    this.isbn = "1234";
 //    this.img = "book";
 //    this.htPrice = 14.90;
+    this.onCart = new EventEmitter<Book>();
+  }
+
+  public clickHandler(p_obj:any):void {
+    // traitement avant ajout au panier
+    // alert("Add to cart");
+    this.onCart.emit(this.bookVO);
   }
 
   ngOnInit() {
   }
-
 }

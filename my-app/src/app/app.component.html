@@ -1,13 +1,22 @@
 <div class="title-back">
   <div class="title-text">{{title}}</div>
 </div>
-<div class="book-catalog">
-<!--
-<app-book [title]="'Harry Potter'"
-          [author]="'J.K. Rowling'"
-          [img]="'harry.jpg'"
-          [isbn]="'1234'"
-          [htPrice]="19.90"></app-book>
--->
-<app-book *ngFor="let book of books" [data]="book"></app-book>
+
+<nav class="menu">
+  <ul>
+    <li><a routerLink="home">Home</a></li>
+    <li><a routerLink="catalog">Catalog</a></li>
+    <li><a routerLink="contact">Contact</a></li>
+    <li><a routerLink="cart">Cart</a></li>
+  </ul>
+</nav>
+
+<hr>
+
+<router-outlet></router-outlet>
+
+<hr>
+
+<div class="footer">
+  (c) Me 2017
 </div>

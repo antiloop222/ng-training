@@ -1,0 +1,12 @@
+<div class="catalog">
+  <!--
+  <app-book [title]="'Harry Potter'"
+            [author]="'J.K. Rowling'"
+            [img]="'harry.jpg'"
+            [isbn]="'1234'"
+            [htPrice]="19.90"></app-book>
+  -->
+  <app-book *ngFor="let book of catalogVO.books | range:0:15"
+            [bookVO]="book"
+            (onCart)="cartHandler($event)"></app-book>
+</div>

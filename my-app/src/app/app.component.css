@@ -9,8 +9,3 @@
     font-size: larger;
     margin: auto;
 }
-
-.book-catalog {
-    display: flex;
-    flex-direction: row;    
-}

@@ -1,7 +1,8 @@
-<div class="book" *ngIf="data !== null">
-  <h1 class="book-title">{{data.title}}</h1>
-  <img class="book-cover" src="./assets/img/{{data.img}}"/>
-  <p>Author: {{data.author}}</p>
-  <p>Price: {{data.htPrice}} € HT</p>
-  <p>ISBN: {{data.isbn}}</p>
+<div class="book" *ngIf="bookVO !== null">
+  <h1 class="book-title">{{bookVO.title}}</h1>
+  <img class="book-cover" src="./assets/img/{{bookVO.img}}"/>
+  <p>Author: {{bookVO.author}}</p>
+  <p>Price: {{bookVO.htPrice}} € HT</p>
+  <p>ISBN: {{bookVO.isbn}}</p>
+  <button (click)="clickHandler($event)">Add to cart</button>
 </div>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Book, BOOKS } from './book';
+import { Book } from './book';
+import { Catalog } from './catalog';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +9,11 @@ import { Book, BOOKS } from './book';
 })
 export class AppComponent {
   public title:string  = 'eBay';
-  public books:Book[] = null;
 
   constructor() {
-    this.books = BOOKS; 
+  }
+
+  public cartHandler(p_book:Book):void {
+    console.log(p_book);
   }
 }
