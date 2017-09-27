@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class AuthComponent implements OnInit {
 
-  public login:string;
+  public email:string;
   public password:string;
 
   private authService:AuthService;
@@ -21,9 +21,15 @@ export class AuthComponent implements OnInit {
     this.router = p_router;
   }
 
-  public clickHandler(p_obj:any):void {
-    this.authService.authenticate(new User(this.login, this.password));
-    this.router.navigate(["home"]);
+  public clickHandler():void {
+    this.authService.authenticate(new User(this.email, this.password));
+    this.authService.isAuthenticated().then(
+      (authenticated:boolean) => {
+        if(authenticated) {
+          this.router.navigate(["home"]);
+        }
+      }
+    )
   }
 
   ngOnInit() {

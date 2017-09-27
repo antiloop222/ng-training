@@ -4,25 +4,20 @@ import { User } from './user';
 @Injectable()
 export class AuthService {
 
-  private authenticated:boolean;
+  private authenticated:boolean = false;
 
   constructor() {
-    this.authenticated = false;
-   }
+  }
 
   public isAuthenticated():Promise<boolean> {
-    console.log("isAuthenticated:" + this.authenticated);
     return Promise.resolve(this.authenticated);
   }
 
   public isNotAuthenticated():Promise<boolean> {
-    console.log("isNotAuthenticated:" + (!this.authenticated));
     return Promise.resolve(!this.authenticated);
   }
 
   public authenticate(user:User):void {
-    this.authenticated = (user.login === "toto" && user.password === "toto");
-    console.log("authenticate:" + this.authenticated);
+    this.authenticated = (user.email === "toto@toto.com" && user.password === "toto");
   }
-
 }

@@ -71,7 +71,7 @@ export class CatalogService {
   }
 
   private errorHandler(error:any) {
-    console.log(error);
+    console.error(error);
     return Promise.reject(error);
   }
 }

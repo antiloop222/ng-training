@@ -15,7 +15,6 @@ export class PaymentGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-      console.log("PaymentGuard.canActivate");
       return this.authService.isAuthenticated();
   }
 }

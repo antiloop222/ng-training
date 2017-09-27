@@ -28,7 +28,6 @@ export class CatalogComponent implements OnInit {
   }
 
   public cartHandler(p_book:Book):void {
-    console.log(p_book);
     this.cartService.addBook(p_book);
   }
 
