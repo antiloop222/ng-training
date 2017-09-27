@@ -26,7 +26,7 @@ export class AuthComponent implements OnInit {
     this.authService.isAuthenticated().then(
       (authenticated:boolean) => {
         if(authenticated) {
-          this.router.navigate(["home"]);
+          this.router.navigate(["payment"]);
         }
       }
     )

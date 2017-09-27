@@ -51,6 +51,9 @@ export class CartComponent implements OnInit {
     return this.getHTTotal() * 1.055;
   }
 
+  public clickHandler():void {
+  }    
+
   ngOnInit() {
     this.refresh();
   }

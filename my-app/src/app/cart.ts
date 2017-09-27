@@ -10,9 +10,9 @@ export class Cart {
     }
 
     public removeBook(p_book:Book):void {
-        this.books.filter(
+        this.books = this.books.filter(
             (_book:Book) => {
-                return _book.isbn !== p_book.isbn;
+                return !(_book.isbn === p_book.isbn);
             }
         );
     }
