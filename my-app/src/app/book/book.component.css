@@ -1,10 +1,10 @@
 .book {
-    background-color: #CCCCCC;
+    background-color: #DDDDDD;
     color: black;
     text-align: left;
     justify-content: center;
     width: 250px;
-    border: 2px solid #888888;
+    border: 2px solid #AAAAAA;
 }
 
 .book-cover {
@@ -15,7 +15,7 @@
 
 .book-title {
     font-size: 1.5em;
-    background-color: #666666;
+    background-color: #888888;
     color: #FAFAFA;
     padding: 5px;
 }

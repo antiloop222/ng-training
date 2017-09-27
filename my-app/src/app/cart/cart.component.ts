@@ -32,8 +32,8 @@ export class CartComponent implements OnInit {
     );
   }
 
+  // TODO seems not working
   public removeFromCart(book:Book):void {
-    // TODO seems not working
     this.cartService.removeBook(book);
     this.refresh();
   }

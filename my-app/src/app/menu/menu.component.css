@@ -1,0 +1,33 @@
+.menu {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #BBBBBB;
+}
+
+.menu ul {
+    margin: auto;
+    padding: 0;
+    max-width: 80%;
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.menu li a, .menu li a:visited {
+    min-width: 100px;
+    font-weight: bold;
+    padding: 15px; 
+    display: block;
+    text-align: center;
+    font-size: 1.1em;
+    color: white;
+    text-decoration: none;
+}
+
+.menu li a:hover {
+    background-color: white;
+    color: #AAAAAA; 
+}

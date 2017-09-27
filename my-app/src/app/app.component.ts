@@ -8,7 +8,7 @@ import { Catalog } from './catalog';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  public title:string  = 'eBay';
+  public title:string  = 'MY EBAY';
 
   constructor() {
   }
