@@ -1,2 +1,14 @@
 <div class="cart">
+    <table>
+        <tr>
+            <th>Nom</th>
+            <th>Prix</th>
+            <th></th>
+        </tr>
+        <tr *ngFor="let book of books">
+            <td>{{book.title}}</td>
+            <td>{{book.htPrice}} € HT</td>
+            <td></td>
+        </tr>
+    </table>    
 </div>

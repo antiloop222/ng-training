@@ -14,19 +14,20 @@ import { CartComponent } from './cart/cart.component';
 import { AuthorPipe } from './author.pipe';
 import { CatalogService } from './catalog.service';
 import { BookDetailsComponent } from './book-details/book-details.component';
+import { CartService } from './cart.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     BookComponent,
+    BookDetailsComponent,
+    CartComponent,
     CatalogComponent,
     ContactComponent,
     HomeComponent,
     RangePipe,
-    CartComponent,
-    AuthorPipe,
-    BookDetailsComponent
+    AuthorPipe
   ],
   imports: [
     FormsModule,
@@ -40,7 +41,7 @@ import { BookDetailsComponent } from './book-details/book-details.component';
       {path:"details/:isbn", component: BookDetailsComponent}
     ])
   ],
-  providers: [CatalogService],
+  providers: [CatalogService,CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

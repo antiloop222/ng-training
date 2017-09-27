@@ -12,7 +12,7 @@
             [isbn]="'1234'"
             [htPrice]="19.90"></app-book>
   -->
-  <app-book *ngFor="let book of catalog.books | range:min:max | author:firstLetter:secondLetter"
+  <app-book *ngFor="let book of books | range:min:max | author:firstLetter:secondLetter"
             [book]="book"
             (onCart)="cartHandler($event)"></app-book>
 </div>

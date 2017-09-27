@@ -1,22 +1,15 @@
 import { Book } from "./book";
 
 export class Catalog {
-    public books:Book[] = null;
-    public nBooks:number = 0;
+    public books:Book[] = new Array<Book>();
 
-    constructor() {
-        this.books = new Array();
-    }
+    constructor() { }
 
     public addBook(p_book:Book):void {
-        this.books[this.nBooks] = p_book;
-        this.nBooks++; 
+        this.books.push(p_book);
     }
 
     public setBooks(p_books:Book[]):void {
         this.books = p_books;
-        if(p_books != null) {
-            this.nBooks = p_books.length;
-        }
     }
 }
