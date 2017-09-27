@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { APP_BASE_HREF } from '@angular/common';
 
 import { BookComponent } from './book.component';
+import { RouterModule } from '@angular/router';
+import { BookDetailsComponent } from '../book-details/book-details.component';
 
 describe('BookComponent', () => {
   let component: BookComponent;
@@ -8,7 +11,18 @@ describe('BookComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BookComponent ]
+      declarations: [
+        BookComponent,
+        BookDetailsComponent
+      ],
+      imports: [
+        RouterModule.forRoot([
+          {path:"details/:isbn", component: BookDetailsComponent}
+        ])
+      ],
+      providers: [
+        {provide: APP_BASE_HREF, useValue : '/' }       
+      ]
     })
     .compileComponents();
   }));

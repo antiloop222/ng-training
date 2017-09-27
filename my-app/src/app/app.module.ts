@@ -9,18 +9,20 @@ import { BookComponent } from './book/book.component';
 import { CatalogComponent } from './catalog/catalog.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
-import { RangePipe } from './range.pipe';
 import { CartComponent } from './cart/cart.component';
-import { AuthorPipe } from './author.pipe';
-import { CatalogService } from './catalog.service';
 import { BookDetailsComponent } from './book-details/book-details.component';
-import { CartService } from './cart.service';
 import { PaymentComponent } from './payment/payment.component';
-import { AuthService } from './auth.service';
-
-import { PaymentGuard } from './payment.guard';
 import { AuthComponent } from './auth/auth.component';
 import { MenuComponent } from './menu/menu.component';
+
+import { AuthService } from './auth.service';
+import { CartService } from './cart.service';
+import { CatalogService } from './catalog.service';
+
+import { RangePipe } from './range.pipe';
+import { AuthorPipe } from './author.pipe';
+
+import { PaymentGuard } from './payment.guard';
 import { AuthGuard } from './auth.guard';
 
 @NgModule({
@@ -52,7 +54,13 @@ import { AuthGuard } from './auth.guard';
       {path:"details/:isbn", component: BookDetailsComponent}
     ])
   ],
-  providers: [CatalogService,CartService,AuthService,PaymentGuard,AuthGuard],
+  providers: [
+    CatalogService,
+    CartService,
+    AuthService,
+    PaymentGuard,
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

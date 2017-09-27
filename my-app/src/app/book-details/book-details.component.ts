@@ -28,8 +28,10 @@ export class BookDetailsComponent implements OnInit {
     this.route.params.subscribe(
       (_params:any) => {
         this.service.getBookByISBN(_params.isbn).then(
-          (_book:Book) => ( this.book = _book )
-        )
+          (_book:Book) => {
+            this.book = _book;
+          }
+        ) 
       }
     );
   }

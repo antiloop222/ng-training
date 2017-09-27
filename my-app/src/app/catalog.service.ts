@@ -61,11 +61,12 @@ export class CatalogService {
   public getBookByISBN(isbn:string):Promise<Book> {
     return this.getCatalog().then(
       (_books:Book[]) => {
-        return _books.find(
+        let book:Book = _books.find( 
           (_book:Book) => {
             return (_book.isbn === isbn);
           }
-        )
+        );
+        return book;
       }
     );
   }
