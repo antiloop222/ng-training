@@ -15,7 +15,13 @@ import { AuthorPipe } from './author.pipe';
 import { CatalogService } from './catalog.service';
 import { BookDetailsComponent } from './book-details/book-details.component';
 import { CartService } from './cart.service';
+import { PaymentComponent } from './payment/payment.component';
+import { AuthService } from './auth.service';
 
+import { PaymentGuard } from './payment.guard';
+import { AuthComponent } from './auth/auth.component';
+import { MenuComponent } from './menu/menu.component';
+import { AuthGuard } from './auth.guard';
 
 @NgModule({
   declarations: [
@@ -26,6 +32,9 @@ import { CartService } from './cart.service';
     CatalogComponent,
     ContactComponent,
     HomeComponent,
+    PaymentComponent,
+    AuthComponent,
+    MenuComponent,
     RangePipe,
     AuthorPipe
   ],
@@ -38,10 +47,12 @@ import { CartService } from './cart.service';
       {path:"catalog", component: CatalogComponent},
       {path:"contact", component: ContactComponent},
       {path:"cart", component: CartComponent},
+      {path:"payment", component: PaymentComponent, canActivate: [PaymentGuard]},
+      {path:"auth", component: AuthComponent, canActivate: [AuthGuard]},
       {path:"details/:isbn", component: BookDetailsComponent}
     ])
   ],
-  providers: [CatalogService,CartService],
+  providers: [CatalogService,CartService,AuthService,PaymentGuard,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

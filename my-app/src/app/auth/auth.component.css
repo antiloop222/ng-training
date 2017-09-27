@@ -1,0 +1,11 @@
+.ng-valid.ng-dirty {
+    background-color: cyan;
+}
+
+.ng-invalid.ng-dirty {
+    background-color: red;
+}
+
+.ng-pristine.ng-valid {
+    background-color: green;
+}

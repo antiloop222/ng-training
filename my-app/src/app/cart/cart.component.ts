@@ -15,15 +15,43 @@ export class CartComponent implements OnInit {
   @Input()
   private books:Book[];
 
+  public htTotal:string = null; 
+  public ttcTotal:string = null;
+
   constructor(p_service:CartService) {
     this.cartService = p_service;
   }
 
-  ngOnInit() {
+  private refresh():void {
     this.cartService.getBooks().then(
-      (_books:Book[]) => {
+      (_books: Book[]) => {
         this.books = _books;
+        this.htTotal = this.getHTTotal().toFixed(2);
+        this.ttcTotal = this.getTTCTotal().toFixed(2);
       }
-    )
+    );
+  }
+
+  public removeFromCart(book:Book):void {
+    // TODO seems not working
+    this.cartService.removeBook(book);
+    this.refresh();
+  }
+
+  public getHTTotal():number {
+    let total:number = 0;
+    let i:number = 0;
+    for(i = 0; i < this.books.length; i++) {
+      total += this.books[i].htPrice;  
+    }
+    return total;
+  }
+
+  public getTTCTotal():number {
+    return this.getHTTotal() * 1.055;
+  }
+
+  ngOnInit() {
+    this.refresh();
   }
 }

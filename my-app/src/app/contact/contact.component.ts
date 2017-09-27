@@ -8,19 +8,7 @@ import { Catalog } from '../catalog';
 })
 export class ContactComponent implements OnInit {
 
-  @Input()
-  public catalog:Catalog = null;
-
-  @Output()
-  public onCart:EventEmitter<Catalog> = null;
-
   constructor() { }
-
-  public clickHandler(p_obj:any):void {
-    // traitement avant ajout au panier
-    // alert("Add to cart");
-    this.onCart.emit(this.catalog);
-  }
 
   ngOnInit() {
   }

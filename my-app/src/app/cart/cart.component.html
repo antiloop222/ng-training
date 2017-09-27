@@ -8,7 +8,19 @@
         <tr *ngFor="let book of books">
             <td>{{book.title}}</td>
             <td>{{book.htPrice}} € HT</td>
+            <td>
+                <button (click)="removeFromCart(book)">X</button>
+            </td>
+        </tr>
+        <tr>
             <td></td>
+            <td>Total HT:</td>
+            <td>{{htTotal}}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Total TTC:</td>
+            <td>{{ttcTotal}}</td>
         </tr>
     </table>    
 </div>

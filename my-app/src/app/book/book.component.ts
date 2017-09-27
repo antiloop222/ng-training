@@ -12,11 +12,9 @@ export class BookComponent implements OnInit {
   public book:Book = null;
 
   @Output()
-  public onCart:EventEmitter<Book> = null;
+  public onCart:EventEmitter<Book> = new EventEmitter<Book>();
 
-  constructor() {
-    this.onCart = new EventEmitter<Book>();
-  }
+  constructor() { }
 
   public clickHandler(p_obj:any):void {
     this.onCart.emit(this.book);
