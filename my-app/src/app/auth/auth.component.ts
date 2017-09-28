@@ -27,6 +27,8 @@ export class AuthComponent implements OnInit {
       (authenticated:boolean) => {
         if(authenticated) {
           this.router.navigate(["payment"]);
+        } else {
+          alert("bad login/password");
         }
       }
     );

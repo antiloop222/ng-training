@@ -1,5 +1,6 @@
 <div class="auth">
   <form>
+    <p>Please login</p>
     <label>e-Mail:</label><input [(ngModel)]="email" name="email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"/><br/>
     <label>Password:</label><input type="password" [(ngModel)]="password" name="password"/><br/>
     <button (click)="clickHandler()">OK</button>
