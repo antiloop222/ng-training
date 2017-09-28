@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Cart } from '../cart';
 import { CartService } from '../cart.service';
 import { Book } from '../book';
+import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -11,6 +13,8 @@ import { Book } from '../book';
 export class CartComponent implements OnInit {
 
   private cartService:CartService;
+  private authService:AuthService;
+  private router:Router;
 
   @Input()
   private books:Book[];
@@ -18,8 +22,10 @@ export class CartComponent implements OnInit {
   public htTotal:string = null; 
   public ttcTotal:string = null;
 
-  constructor(p_service:CartService) {
-    this.cartService = p_service;
+  constructor(p_cartService:CartService, p_authService:AuthService, p_router:Router) {
+    this.cartService = p_cartService;
+    this.authService = p_authService;
+    this.router = p_router;
   }
 
   private refresh():void {
@@ -32,7 +38,6 @@ export class CartComponent implements OnInit {
     );
   }
 
-  // TODO seems not working
   public removeFromCart(book:Book):void {
     this.cartService.removeBook(book);
     this.refresh();
@@ -51,7 +56,19 @@ export class CartComponent implements OnInit {
     return this.getHTTotal() * 1.055;
   }
 
-  public clickHandler():void {
+  public buy():void {
+    console.log("Buy");
+    this.authService.isAuthenticated().then(
+      (authenticated:boolean) => {
+        if(authenticated) {
+          console.log("payment");
+          this.router.navigate(["payment"]);
+        } else {
+          console.log("auth");
+          this.router.navigate(["auth"]);
+        }
+      }
+    );
   }    
 
   ngOnInit() {
