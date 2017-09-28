@@ -1,17 +1,10 @@
 <div class="catalog-filters">
-    <label>Prix min: </label><input [(ngModel)]="min"/><br/>
-    <label>Prix max: </label><input [(ngModel)]="max"/><br/>
-    <label>Nom de l'auteur compris entre </label><input [(ngModel)]="firstLetter"/><label> et </label><input [(ngModel)]="secondLetter"/><br/>
+    <label>Prix min </label><input style="width: 50px" [(ngModel)]="min"/> €<br/>
+    <label>Prix max </label><input style="width: 50px" [(ngModel)]="max"/> €<br/>
+    <label>Nom de l'auteur compris entre </label><input style="width: 20px" [(ngModel)]="firstLetter"/><label> et </label><input style="width: 20px" [(ngModel)]="secondLetter"/><br/>
 </div>
 <br/>
 <div class="catalog-content">
-  <!--
-  <app-book [title]="'Harry Potter'"
-            [author]="'J.K. Rowling'"
-            [img]="'harry.jpg'"
-            [isbn]="'1234'"
-            [htPrice]="19.90"></app-book>
-  -->
   <app-book *ngFor="let book of books | range:min:max | author:firstLetter:secondLetter"
             [book]="book"
             (onCart)="cartHandler($event)"></app-book>
